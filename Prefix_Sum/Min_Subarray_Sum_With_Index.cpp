@@ -74,33 +74,33 @@ void solve()
       
 
       //Maximum Subarray Sum 
-      // Main Idea is We Have A - B || B the lower the better 
+      // Main Idea is We Have A - B || B the Bigger the better 
       // -4 2 4 -3 -1 5 -8 
-      // 0 -4 -2 2-1 -2 3 -5 
-      // Ans : 7 2 6 
-      ll maximum_subarray_sum = INT_MIN ;
-      ll mini_value = 0 ;  
-      ll index_of_mini_value = 0 ; 
-      ll start_index = 1 ; 
-      ll end_index = 1 ;
-      for(int i = 1 ; i<=n ; i++)
+      // 0 -4 -2 2 -1 -2 3 -5 
+      // Ans : -8 7 7
+      ll max_value = 0 ; 
+      ll max_value_index = 0 ; 
+      ll start_index = 0 ; 
+      ll end_index = 0 ; 
+      ll min_subarray_sum = LLONG_MAX; 
+      for(int i=1;i<=n ; i++)
       {
-        ll temp_sum = vt[i] - mini_value ; 
-        if(temp_sum>maximum_subarray_sum)
+        ll temp_sum = vt[i] - max_value ; 
+        if(temp_sum<min_subarray_sum)
         {
-            start_index = index_of_mini_value + 1 ; 
-            end_index = i ;
-            maximum_subarray_sum = temp_sum ;  
+            min_subarray_sum = temp_sum ; 
+            start_index = max_value_index+1 ; 
+            end_index = i ; 
         }
-        if(vt[i]<mini_value)
+        if(vt[i]>max_value)
         {
-            mini_value = vt[i] ; 
-            index_of_mini_value = i ; 
+            max_value = vt[i] ; 
+            max_value_index = i ; 
         }
-        cout<<index_of_mini_value<<endl ; 
-      } 
+      }
 
-      cout<<maximum_subarray_sum<<" "<<start_index<<" "<<end_index<<endl ; 
+      cout<<min_subarray_sum<<" "<<start_index<<" "<<end_index<<endl ; 
+
 
     
 }
@@ -110,7 +110,7 @@ int32_t main()
     moonstone();
     //fraction()
     
-          tc
+         tc
     {
         solve() ;
     }
