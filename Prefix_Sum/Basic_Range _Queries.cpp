@@ -62,6 +62,7 @@ int dy[] = {0, 0, -1, 1};
 void solve()
 { 
       int n ; cin>>n ; 
+      int q  ; cin>>q ; 
       int arr[n] ; 
       f(n) cin>>arr[i] ; 
       ll sum = 0 ; 
@@ -72,34 +73,18 @@ void solve()
         vt[i] = sum ; 
       } 
       
-
-      //Minimum Subarray Sum 
-      // Main Idea is We Have A - B || B the Bigger the better 
+      //Basic Range Queries 
+      // Main Idea is To Answer Total Sum In a Query in O(1) time  
       // -4 2 4 -3 -1 5 -8 
-      // 0 -4 -2 2 -1 -2 3 -5 
-      // Ans : -8 7 7
-      ll max_value = 0 ; 
-      ll max_value_index = 0 ; 
-      ll start_index = 0 ; 
-      ll end_index = 0 ; 
-      ll min_subarray_sum = LLONG_MAX; 
-      for(int i=1;i<=n ; i++)
-      {
-        ll temp_sum = vt[i] - max_value ; 
-        if(temp_sum<min_subarray_sum)
-        {
-            min_subarray_sum = temp_sum ; 
-            start_index = max_value_index+1 ; 
-            end_index = i ; 
-        }
-        if(vt[i]>max_value)
-        {
-            max_value = vt[i] ; 
-            max_value_index = i ; 
-        }
-      }
+      // queries : 2->5 , 1->6 , 1->1 , 1->7 , 3->7
+      // Ans : 2 , 3 , -4 , -5 , 3
 
-      cout<<min_subarray_sum<<" "<<start_index<<" "<<end_index<<endl ; 
+      while(q--)
+      {
+        int start  , end ; 
+        cin>>start>>end ; 
+        cout<<vt[end] - vt[start-1]<<endl ; 
+      }
 
 
     
@@ -110,7 +95,7 @@ int32_t main()
     moonstone();
     //fraction()
     
-         tc
+        //  tc
     {
         solve() ;
     }
