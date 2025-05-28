@@ -1,9 +1,5 @@
 
 
-//Problem : https://cses.fi/problemset/view/1643/
-//In Addition Print The index 
-//Array -4 2 4 -3 -1 5 -8
-
 #include <bits/stdc++.h>
 using namespace std;
 
