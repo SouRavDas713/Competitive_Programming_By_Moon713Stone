@@ -52,14 +52,14 @@ int dy[] = {0, 0, -1, 1};
 
 //. . . || . . . || . . . || . . . ------ MOON713STONE ------ . . . || . . . || . . . || . . . || . . . || . . . || . . .
 
-/*  
+ 
 Problem Link : https://leetcode.com/problems/move-zeroes/description/
 Test Case : 
 0 1 0 3 12
 Output : Move Zero to Next And Remain Order Same : 1 3 12 0 0 [ Can Not Create Another Array ]
 The Idea : Exchange The Zero and Non-Zero element 
 Test Case 2 : 0 1 0 3 2 0 0 =>  1 3 2 0 0 0 0 
-*/
+
 
 
 void solve()
