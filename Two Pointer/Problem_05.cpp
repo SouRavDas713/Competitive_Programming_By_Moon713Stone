@@ -68,22 +68,32 @@ If The array Sorted we Can Solve By Two Pointer in O(n) ;
 void solve()
 {
     //nlogn
-    int n ; cin>>n ; 
-    int x ; cin>>x ; 
-    int arr[n] ; 
-    map<int , int> mp ; 
-    f(n)
+    // int n ; cin>>n ; 
+    // int x ; cin>>x ; 
+    // int arr[n] ; 
+    // map<int , int> mp ; 
+    // f(n)
+    // {
+    //     cin>>arr[i] ; 
+    //     ll need = x - arr[i] ; 
+    //     if(mp[need]>=1) 
+    //     {
+    //         cout<<mp[need]<<" "<<i+1<<endl ; return; 
+    //     }
+    //     mp[arr[i]] = i+1 ;  ; 
+    // }
+
+    // cout<<"IMPOSSIBLE"<<endl ; 
+    // Another Way 
+    int n  , x ; cin>>n>>x ; 
+    int arr[n] ; f(n) cin>>arr[i] ; 
+    sort(arr , arr+n) ; 
+    int i = 0 ; j = n-1 ; 
+    for(i<j)
     {
-        cin>>arr[i] ; 
-        ll need = x - arr[i] ; 
-        if(mp[need]>=1) 
-        {
-            cout<<mp[need]<<" "<<i+1<<endl ; return; 
-        }
-        mp[arr[i]] = i+1 ;  ; 
+        // next day
     }
 
-    cout<<"IMPOSSIBLE"<<endl ; 
 
 
 }
