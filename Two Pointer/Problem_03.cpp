@@ -52,50 +52,88 @@ int dy[] = {0, 0, -1, 1};
 
 //. . . || . . . || . . . || . . . ------ MOON713STONE ------ . . . || . . . || . . . || . . . || . . . || . . . || . . .
 
-/* 
-Most Easy And Classical 
-Problem Link : https://leetcode.com/problems/merge-sorted-array/description/
-
-Test Case : [ Must be Sorted ]
-1 2 4 8 10 12
-3 3 7 8 11 14 
-Output : 
-You Have To Print Sorted Array : 1 2 3 3 4 7 8 8 10 11 12 14
-The Idea : 
+/*  
+Problem Link : https://leetcode.com/problems/squares-of-a-sorted-array/description/
+Test Case : 
+-4 -1 0 3 10 [ Sorted ]
+Output : Sorted Square Array => 0 1 9 16 200 [ O(n) ]
+The Idea : Find Most abs Min Element .. Then Left Right Pointer and compare abs ... Long Implementation
+Idea 2 : Pointer 0 And N ... And make a reverse array 
 
 */
 
+
 void solve()
 {
-    int n ; cin>>n ; 
-    int arr1[n] ; f(n) cin>>arr1[i] ; 
-    int arr2[n] ; f(n) cin>>arr2[i] ; 
-    vector<int> ans ; 
-    int i = 0  , j = 0 ; 
-    while(i<n && j<n)
-    {
-        if(arr1[i]<=arr2[j]) 
-        {
-            ans.pb(arr1[i]) ; 
-            i++ ; 
-        }
-        else 
-        {
-            ans.pb(arr2[j]) ; 
-            j++ ; 
-        }
-    }
-    while(i<n)
-    {
-        ans.pb(arr1[i]) ; 
-        i++ ;
-    }
-    while(j<n)
-    {
-        ans.pb(arr2[j]) ; 
-        j++ ;
-    }
-    cout<<ans<<endl ; 
+    // Sol 01 
+    // int n ; cin>>n ; 
+    // int arr[n] ; f(n) cin>>arr[i] ;  
+    // f(n) arr[i] = abs(arr[i]) ; 
+    // int pos = 0 ;
+    // int mini = INT_MAX ;  
+    // f(n)
+    // {
+    //     if(arr[i]<mini) 
+    //     {
+    //         mini = (arr[i]) ; 
+    //         pos = i ; 
+    //     }
+    // }
+    // vector<int> ans ; 
+    // ans.pb(mini*mini) ; 
+    // int l = pos - 1 ; 
+    // int r = pos + 1 ; 
+    // while(l>=0 && r<n)
+    // {
+    //     if(arr[l]<arr[r])
+    //     {
+    //         ans.pb(arr[l]*arr[l]) ; 
+    //         l-- ; 
+    //     }
+    //     else
+    //     {
+    //         ans.pb(arr[r]*arr[r]) ; 
+    //         r++ ; 
+    //     }
+    // }
+    // while(l>=0)
+    // {
+    //     ans.pb(arr[l]*arr[l]) ; 
+    //         l-- ;
+    // }
+    // while(r<n)
+    // {
+    //     ans.pb(arr[r]*arr[r]) ; 
+    //     r++ ;
+    // }
+    // cout<<ans<<endl ; 
+
+
+    // Sol 02 
+    // int n ; cin>>n ; 
+    // int arr[n] ; f(n) cin>>arr[i] ;  
+    // f(n) arr[i] = abs(arr[i]) ; 
+    // vector<int> vt; 
+    // int i = 0 ;
+    // int j = n-1 ; 
+    // while(1)
+    // {
+    //     if(arr[i]>arr[j])
+    //     {
+    //         vt.pb(arr[i]*arr[i]) ; 
+    //         i++ ; 
+    //     }
+    //     else
+    //     {
+    //         vt.pb(arr[j]*arr[j]) ; 
+    //         j-- ;
+    //     }
+    //     if(i>j) break ; 
+    // }
+    // reverse(all(vt)) ; 
+    // cout<<vt<<endl ; 
+
+
 
 }
 

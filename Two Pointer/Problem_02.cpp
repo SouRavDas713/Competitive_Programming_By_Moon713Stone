@@ -52,50 +52,27 @@ int dy[] = {0, 0, -1, 1};
 
 //. . . || . . . || . . . || . . . ------ MOON713STONE ------ . . . || . . . || . . . || . . . || . . . || . . . || . . .
 
-/* 
-Most Easy And Classical 
-Problem Link : https://leetcode.com/problems/merge-sorted-array/description/
-
-Test Case : [ Must be Sorted ]
-1 2 4 8 10 12
-3 3 7 8 11 14 
-Output : 
-You Have To Print Sorted Array : 1 2 3 3 4 7 8 8 10 11 12 14
-The Idea : 
-
+/*  
+Problem Link : https://leetcode.com/problems/move-zeroes/description/
+Test Case : 
+0 1 0 3 12
+Output : Move Zero to Next And Remain Order Same : 1 3 12 0 0 [ Can Not Create Another Array ]
+The Idea : Exchange The Zero and Non-Zero element 
+Test Case 2 : 0 1 0 3 2 0 0 =>  1 3 2 0 0 0 0 
 */
+
 
 void solve()
 {
     int n ; cin>>n ; 
-    int arr1[n] ; f(n) cin>>arr1[i] ; 
-    int arr2[n] ; f(n) cin>>arr2[i] ; 
-    vector<int> ans ; 
-    int i = 0  , j = 0 ; 
-    while(i<n && j<n)
+    int arr[n] ; f(n) cin>>arr[i] ;  
+    int l = 0 ;  
+    for(int r = 0 ; r<n ; r++)
     {
-        if(arr1[i]<=arr2[j]) 
-        {
-            ans.pb(arr1[i]) ; 
-            i++ ; 
-        }
-        else 
-        {
-            ans.pb(arr2[j]) ; 
-            j++ ; 
-        }
+        swap(arr[l] , arr[r]) ; 
+        if(arr[l]!=0) l++ ; 
     }
-    while(i<n)
-    {
-        ans.pb(arr1[i]) ; 
-        i++ ;
-    }
-    while(j<n)
-    {
-        ans.pb(arr2[j]) ; 
-        j++ ;
-    }
-    cout<<ans<<endl ; 
+    f(n) cout<<arr[i]<<" " ; 
 
 }
 
