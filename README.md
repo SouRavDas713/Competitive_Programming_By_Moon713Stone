@@ -1,4 +1,4 @@
-# Competitive_Programming 
+# Competitive_Programming By CPS
 
 <b><u> Two Pointer <br><br>
 <b> Problem 01   : https://leetcode.com/problems/merge-sorted-array/description/ <br>
