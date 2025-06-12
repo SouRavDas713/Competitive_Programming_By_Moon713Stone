@@ -1,7 +1,7 @@
 # Competitive_Programming By CPS
 
 <b> Sliding Window <br><br>
-<b> Problem 01   : Basic + https://www.spoj.com/problems/ARRAYSUB/ <br>
+<b> Problem 01   : https://www.spoj.com/problems/ARRAYSUB/ <br>
 <b> Problem 02   : https://cses.fi/problemset/task/1141 <br>
 
 <b> Two Pointer <br><br>
