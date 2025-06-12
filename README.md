@@ -7,6 +7,7 @@
 <b> Problem 04   : https://leetcode.com/problems/long-pressed-name/description/ <br>
 <b> Problem 05   : https://cses.fi/problemset/task/1640 <br>
 <b> Problem 06   : <br>
-
+==========================================================================================
 <b><u> Sliding Window <br><br>
 <b> Problem 01   : Basic + https://www.spoj.com/problems/ARRAYSUB/ <br>
+<b> Problem 02   : https://cses.fi/problemset/task/1141 <br>
