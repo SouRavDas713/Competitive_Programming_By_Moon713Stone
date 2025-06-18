@@ -53,65 +53,64 @@ int dy[] = {0, 0, -1, 1};
 //. . . || . . . || . . . || . . . ------ MOON713STONE ------ . . . || . . . || . . . || . . . || . . . || . . . || . . .
 
 
-Problem Link : https://cses.fi/problemset/task/1640
+Problem Link : https://cses.fi/problemset/task/1641 [ Sum Of Three Value ] 
 
-Test Case :
+Test Case : N<5000 SO Easy
 4 8
 2 7 5 1
-Output : 7 + 1 = 8 and Distinct Position
-The Idea :
-loop and sequientially update map ... N logn .. 
-If The array Sorted we Can Solve By Two Pointer in O(n) ; 
-Or We Can First Sort and Then Two Pointer
-The Idea ; 
-left+right<=target -> left++ ; 
-right-- ; 
-
-
+Output : 1 3 4
+The Idea : Iterate And Camculate all Previous Sum of Pair
 
 
 void solve()
 {
-    //nlogn
-    int n ; cin>>n ; 
-    int x ; cin>>x ; 
+
+    //This is 5000*5000 + logN => TLE
+
+    int n  , target ; 
+    cin>>n>>target ; 
     int arr[n] ; 
-    map<int , int> mp ; 
-    f(n)
+    f(n) cin>>arr[i] ; 
+    map<int , pair<int , int>> mp ; 
+    for(int i = 0 ; i<n ; i++)
     {
-        cin>>arr[i] ; 
-        ll need = x - arr[i] ; 
-        if(mp[need]>=1) 
+        int need = target - arr[i] ; 
+        if(mp.count(need)==1)
         {
-            cout<<mp[need]<<" "<<i+1<<endl ; return; 
-        }
-        mp[arr[i]] = i+1 ;  ; 
-    }
-
-    cout<<"IMPOSSIBLE"<<endl ; 
-
-    // Another Way : 
-
-    int n  , target ; cin>>n>>target ; 
-    vector<pair<int , int>> vt ;
-    f(n) {int a  ; cin>>a ;  vt.pb({a , i}) ; } 
-    sort(all(vt)) ;  
-    int i = 0 , j = n-1 ; 
-    while(i<j)
-    {
-        while(i+1<j && vt[i+1].fs+vt[j].first<=target)
-        {
-            i++ ; 
-        }
-        if(vt[i].fs+vt[j].fs==target)
-        {
-            cout<<vt[i].sc+1<<" "<<vt[j].sc+1<<endl ; 
+            cout<<mp[need].fs+1<<" "<<mp[need].sc+1<<" "<<i+1<<endl ; 
             return ; 
         }
-        j-- ; 
+        else
+        {
+           for(int j = 0 ; j<i ; j++)
+           {
+            mp[arr[i]+arr[j]] = {i , j} ; 
+           }
+        }
+    }
+    cout<<"IMPOSSIBLE"<<endl ; 
+
+    // in map Not pair Rather Single Value 
+
+     int n  , target ; 
+    cin>>n>>target ; 
+    int arr[n] ; 
+    f(n) cin>>arr[i] ; 
+    map<int , int> mp ; 
+    for(int i = 0 ; i<n ; i++)
+    {
+        for(int j = i+1 ; j<n ; j++)
+        {
+            ll need = target - ( arr[i]+arr[j]) ; 
+            if(mp.count(need)==1) 
+            {
+                cout<<mp[need]+1<<" "<<j+1<<" "<<i+1<<endl ; 
+                return  ; 
+            }
+        }
+        mp[arr[i]] = i ; 
     }
     cout<<"IMPOSSIBLE"<<endl ;
-
 
 }
 
