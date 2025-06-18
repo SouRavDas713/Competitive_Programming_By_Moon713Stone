@@ -10,4 +10,4 @@
 <b> Problem 03   : https://leetcode.com/problems/squares-of-a-sorted-array/description/ <br>
 <b> Problem 04   : https://leetcode.com/problems/long-pressed-name/description/ <br>
 <b> Problem 05   : https://cses.fi/problemset/task/1640 <br>
-<b> Problem 06   : <br>
+<b> Problem 06   : https://cses.fi/problemset/task/1641<br>
